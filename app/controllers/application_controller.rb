@@ -16,7 +16,7 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/registrations' do
-
+    User.create(name: params[:name], email: params[:email], password[:password])
     redirect '/users/home'
   end
 
@@ -29,7 +29,7 @@ class ApplicationController < Sinatra::Base
     redirect '/users/home'
   end
 
-  get '/sessions/logout' do 
+  get '/sessions/logout' do
 
     redirect '/'
   end
